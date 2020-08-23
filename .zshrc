@@ -20,18 +20,18 @@ function dcip-fn {
 }
 
 function dnames-fn {
-	for ID in `docker container ls | awk '{print $1}' | grep -v 'CONTAINER'`
-	do
-    	docker container inspect $ID | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
-	done
+  for ID in `docker container ls | awk '{print $1}' | grep -v 'CONTAINER'`
+  do
+      docker container inspect $ID | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
+  done
 }
 
 function dci-fn {
-	docker container inspect $1
+  docker container inspect $1
 }
 
 function dcl-fn {
-	docker container logs $1
+  docker container logs $1
 }
 
 function dcls-fn {
@@ -43,7 +43,7 @@ function dclsa-fn {
 }
 
 function dcex-fn { # for running containers
-	docker container exec -it $1 ${2:-bash}
+  docker container exec -it $1 ${2:-bash}
 }
 
 function dcrun-fn {
@@ -51,7 +51,7 @@ function dcrun-fn {
 }
 
 function dcrunrm-fn { # stop container after exiting
-	docker container run -it --rm $1 ${2:-bash}
+  docker container run -it --rm $1 ${2:-bash}
 }
 
 function dcrm-fn {
