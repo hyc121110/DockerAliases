@@ -4,6 +4,10 @@ driall() { docker rmi $(docker images -q); }
 function dii-fn { docker image inspect $1 }
 function dih-fn { docker image history $1 }
 function dils-fn { docker image ls }
+function dib-fn { docker image build $* }
+function dit-fn { docker image tag $* }
+function dip-fn { docker image push $* }
+function dirm-fn { docker image rm $* }
 
 # containers
 dcrmall() { docker container rm $* $(docker ps -q -a); }
@@ -61,6 +65,10 @@ function dcrm-fn {
 alias dii=dii-fn
 alias dih=dih-fn
 alias dils=dils-fn
+alias dib=dib-fn
+alias dit=dit-fn
+alias dip=dip-fn
+alias dirm=dirm-fn
 alias dcip=dcip-fn
 alias dci=dci-fn
 alias dcl=dcl-fn
