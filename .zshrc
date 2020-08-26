@@ -35,7 +35,7 @@ function dci-fn {
 }
 
 function dcl-fn {
-  docker container logs $1
+  docker container logs $*
 }
 
 function dcls-fn {
@@ -62,6 +62,13 @@ function dcrm-fn {
   docker container rm $*
 }
 
+# volumes
+function dvls-fn { docker volume ls }
+function dvi-fn { docker volume inspect $1 }
+function dvp-fn { docker volume prune }
+function dvr-fn { docker volume rm $* }
+function dvc-fn { docker volume create $1 }
+
 alias dii=dii-fn
 alias dih=dih-fn
 alias dils=dils-fn
@@ -69,6 +76,11 @@ alias dib=dib-fn
 alias dit=dit-fn
 alias dip=dip-fn
 alias dirm=dirm-fn
+alias dvls=dvls-fn
+alias dvi=dvi-fn
+alias dvp=dvp-fn
+alias dvr=dvr-fn
+alias dvc=dvc-fn
 alias dcip=dcip-fn
 alias dci=dci-fn
 alias dcl=dcl-fn
